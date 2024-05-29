@@ -9,7 +9,7 @@ import org.junit.Test;
  * @Create 2024/5/28 16:56
  * @Version 1.0
  */
-public class _6_28_strStr {
+public class _6_28_strStr_brute_force {
     @Test
     public void test1() {
         System.out.println(strStr("hello", "ll"));
