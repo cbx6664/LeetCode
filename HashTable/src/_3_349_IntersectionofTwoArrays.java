@@ -45,6 +45,7 @@ public class _3_349_IntersectionofTwoArrays {
             }
         }
 
+//        intersectionSet.stream().mapToInt(x->x).toArray();
         //将intersectionSet转化为array
         int[] arr = new int[intersectionSet.size()];
         int j = 0;

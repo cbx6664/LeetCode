@@ -29,7 +29,7 @@ import java.util.Set;
 public class _4_202_HappyNumber {
     @Test
     public void test1() {
-        System.out.println(isHappy(0));
+        System.out.println(isHappy(19));
     }
 
     public boolean isHappy(int n) {
