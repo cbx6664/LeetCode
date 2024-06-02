@@ -63,7 +63,7 @@ public class HashTable_8_15_3Sum {
                 } else {
                     result.add(Arrays.asList(nums[i], nums[left], nums[right]));
 
-                    //对b和c去重
+                    //找到了a+b+c = 0，开始对b和c去重，遇到重复的b和c直接跳过，避免再次被计入
                     while (right > left && nums[right] == nums[right - 1]) {
                         right--;
                     }

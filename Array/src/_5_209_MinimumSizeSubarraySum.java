@@ -34,7 +34,9 @@ public class _5_209_MinimumSizeSubarraySum {
         for (int right = 0; right < nums.length; right++) {
             sum += nums[right];
             while (sum >= target) {
+                //right - left + 1就是元素的数量
                 result = Math.min(result, right - left + 1);
+                //left右移，缩小窗口
                 sum -= nums[left++];
             }
         }
