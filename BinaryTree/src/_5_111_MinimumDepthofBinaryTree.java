@@ -1,8 +1,6 @@
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 /**
@@ -14,37 +12,39 @@ import java.util.Queue;
  * @Create 2024/6/9 11:48
  * @Version 1.0
  */
-public class _4_515_FindLargestValueinEachTreeRow {
+public class _5_111_MinimumDepthofBinaryTree {
     @Test
     public void test1() {
         TreeNode treeNode2 = new TreeNode(new TreeNode(new TreeNode(new TreeNode(new TreeNode(7), 5, null), 4, new TreeNode(6)), 2, null), 1, new TreeNode(3));
-        System.out.println(levelOrder(treeNode2));
+        System.out.println(minDepth(treeNode2));
 
     }
 
-    public List<Integer> levelOrder(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
+    public int minDepth(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         if (root != null) {
             queue.add(root);
         }
+        int depth = 0;
         while (!queue.isEmpty()) {
             //记录每一层的节点数
             int size = queue.size();
-            int max = Integer.MIN_VALUE;
+            //开始遍历新的一层，depth++
+            depth++;
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                max = Integer.max(max, node.val);
+                //下一层的节点加入队列
                 if (node.left != null) {
                     queue.add(node.left);
                 }
                 if (node.right != null) {
                     queue.add(node.right);
                 }
+                if (node.left == null && node.right == null) {
+                    return depth;
+                }
             }
-            //把每一层的max value存入result
-            result.add(max);
         }
-        return result;
+        return depth;
     }
 }

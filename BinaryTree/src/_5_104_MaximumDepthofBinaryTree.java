@@ -12,7 +12,7 @@ import java.util.Queue;
  * @Create 2024/6/9 11:48
  * @Version 1.0
  */
-public class _4_104_MaximumDepthofBinaryTree {
+public class _5_104_MaximumDepthofBinaryTree {
     @Test
     public void test1() {
         TreeNode treeNode2 = new TreeNode(new TreeNode(new TreeNode(new TreeNode(new TreeNode(7), 5, null), 4, new TreeNode(6)), 2, null), 1, new TreeNode(3));
