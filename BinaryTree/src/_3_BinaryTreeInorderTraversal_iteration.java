@@ -23,13 +23,15 @@ public class _3_BinaryTreeInorderTraversal_iteration {
     }
 
     public List<Integer> inorderIterationTraversal(TreeNode root) {
+        //result保存结果
         List<Integer> result = new ArrayList<>();
         if (root == null) {
             return result;
         }
+        //初始化一个stack来辅助遍历
         Stack<TreeNode> stack = new Stack<>();
 
-        //指针cur
+        //指针cur跟踪当前节点
         TreeNode cur = root;
         //所有左子节点依次入栈
         while (cur != null || !stack.isEmpty()) {
