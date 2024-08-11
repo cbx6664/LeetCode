@@ -24,8 +24,8 @@ public class _8_572_SubtreeOfAnotherTree {
     public void test1() {
         TreeNode treeNode2 = new TreeNode(new TreeNode(new TreeNode(new TreeNode(new TreeNode(7), 5, null), 4, new TreeNode(6)), 2, null), 1, new TreeNode(3));
         TreeNode node3 = new TreeNode(new TreeNode(new TreeNode(3), 2, new TreeNode(4)), 1, new TreeNode(new TreeNode(4), 2, new TreeNode(3)));
-        TreeNode node4 = new TreeNode(new TreeNode(new TreeNode(1),4,new TreeNode(2)),3,new TreeNode(5));
-        TreeNode node5 = new TreeNode(new TreeNode(1),4,new TreeNode(2));
+        TreeNode node4 = new TreeNode(new TreeNode(new TreeNode(1), 4, new TreeNode(2)), 3, new TreeNode(5));
+        TreeNode node5 = new TreeNode(new TreeNode(1), 4, new TreeNode(2));
 
         System.out.println(isSubtree(node4, node5));
 

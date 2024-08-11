@@ -1,6 +1,8 @@
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -11,32 +13,25 @@ import java.util.Queue;
  * @Author CBX
  * @Create 2024/6/9 11:48
  * @Version 1.0
- * compared to the MaximumDepthOfBinaryTree, this applied a condition
- * "if (node.left == null && node.right == null) {
- *                     return depth;
- *                 }"
- *                 to tell if both children are null
  */
-
-public class _5_111_MinimumDepthofBinaryTree {
+public class _11_222_CountCompleteTreeNodes {
     @Test
     public void test1() {
         TreeNode treeNode2 = new TreeNode(new TreeNode(new TreeNode(new TreeNode(new TreeNode(7), 5, null), 4, new TreeNode(6)), 2, null), 1, new TreeNode(3));
-        System.out.println(minDepth(treeNode2));
+        System.out.println(levelOrder(treeNode2));
 
     }
 
-    public int minDepth(TreeNode root) {
+    public int levelOrder(TreeNode root) {
+        int count = 0;
         Queue<TreeNode> queue = new LinkedList<>();
         if (root != null) {
             queue.add(root);
         }
-        int depth = 0;
         while (!queue.isEmpty()) {
             //记录每一层的节点数
             int size = queue.size();
-            //开始遍历新的一层，depth++
-            depth++;
+            count += size;
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 //下一层的节点加入队列
@@ -46,11 +41,8 @@ public class _5_111_MinimumDepthofBinaryTree {
                 if (node.right != null) {
                     queue.add(node.right);
                 }
-                if (node.left == null && node.right == null) {
-                    return depth;
-                }
             }
         }
-        return depth;
+        return count;
     }
 }
