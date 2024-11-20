@@ -18,7 +18,8 @@ public class _2_144_BinaryTreePreorderTraversal {
         TreeNode treeNode1 = new TreeNode(new TreeNode(new TreeNode(4), 2, new TreeNode(5)), 1, new TreeNode(new TreeNode(6), 3, null));
 
         TreeNode treeNode2 = new TreeNode(new TreeNode(new TreeNode(new TreeNode(new TreeNode(7), 5, null), 4, new TreeNode(6)), 2, null), 1, new TreeNode(3));
-        System.out.println(preorderTraversal(treeNode2));
+        TreeNode treeNode3 = new TreeNode(new TreeNode(null,2,new TreeNode(5)),1,new TreeNode(3));
+        System.out.println(preorderTraversal(treeNode3));
 
     }
 

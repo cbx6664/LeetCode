@@ -1,27 +1,59 @@
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
- * ClassName: _4_102_BinaryTreeLevelOrderTraversal
+ * ClassName: _19_654_MaximumBinaryTree
  * Package: PACKAGE_NAME
  * Description:
  *
  * @Author CBX
- * @Create 2024/6/9 11:48
+ * @Create 19/11/24 23:07
  * @Version 1.0
  */
-public class _5_102_BinaryTreeLevelOrderTraversal {
+public class _19_654_MaximumBinaryTree {
     @Test
     public void test1() {
-        TreeNode treeNode2 = new TreeNode(new TreeNode(new TreeNode(new TreeNode(new TreeNode(7), 5, null), 4, new TreeNode(6)), 2, null), 1, new TreeNode(3));
-        TreeNode node = new TreeNode(new TreeNode(new TreeNode(new TreeNode(7), 11, new TreeNode(2)), 4, null), 5, new TreeNode(new TreeNode(13), 8, new TreeNode(new TreeNode(5), 4, new TreeNode(1))));
+        int[] nums = new int[]{3, 2, 1, 6, 0, 5};
+        System.out.println(levelOrder(constructMaximumBinaryTree(nums)));
 
-        System.out.println(levelOrder(node));
 
+    }
+
+
+    public TreeNode constructMaximumBinaryTree(int[] nums) {
+        // 终止条件
+        if (nums.length == 0) {
+            return null;
+        }
+        if (nums.length == 1) {
+            return new TreeNode(nums[0]);
+        }
+
+        // 单次递归逻辑
+        int rootIndex = 0;
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            if (max < nums[i]) {
+                max = nums[i];
+                rootIndex = i;
+            }
+        }
+
+        TreeNode root = new TreeNode(max);
+
+
+        int[] leftNums = Arrays.copyOfRange(nums, 0, rootIndex);
+        int[] rightNums = Arrays.copyOfRange(nums, rootIndex + 1, nums.length);
+        root.left = constructMaximumBinaryTree(leftNums);
+        root.right = constructMaximumBinaryTree(rightNums);
+
+        return root;
+    }
+
+    public TreeNode traversal(int[] nums) {
+
+        return null;
     }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
