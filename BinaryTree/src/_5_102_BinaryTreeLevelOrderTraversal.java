@@ -24,7 +24,7 @@ public class _5_102_BinaryTreeLevelOrderTraversal {
 
     }
 
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         if (root != null) {
