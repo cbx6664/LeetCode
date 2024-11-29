@@ -32,7 +32,7 @@ public class _3_BinaryTreePreorderTraversal_iteration {
         //root入栈
         stack.push(root);
         while (!stack.isEmpty()) {
-            //弹出当前root
+            // ！！！ 注意这一步，是弹出当前root，是动态的, 否则会造成死循环
             TreeNode node = stack.pop();
             result.add(node.val);
 

@@ -33,7 +33,9 @@ public class _18_106_ConstructBinaryTreefromInorderandPostorderTraversal {
         // 统一为左闭右开
         // 中序：左根右，后序：左右根
         // 先获取root，后序最后一个元素
-        if (postorder.length == 0) return null;
+        if (postorder.length == 0) {
+            return null;
+        }
         int rootValue = postorder[postorder.length - 1];
         TreeNode root = new TreeNode(rootValue);
 
@@ -70,7 +72,9 @@ public class _18_106_ConstructBinaryTreefromInorderandPostorderTraversal {
         // 统一为左闭右开
         // 中序：左根右，后序：左右根
         // 先获取root，后序最后一个元素
-        if (postStart > postEnd) return null;
+        if (postStart > postEnd) {
+            return null;
+        }
         int rootValue = postorder[postEnd];
         TreeNode root = new TreeNode(rootValue);
 
@@ -89,15 +93,6 @@ public class _18_106_ConstructBinaryTreefromInorderandPostorderTraversal {
         }
 
         int leftInorderLength = inorderDelimiterIndex - inStart;
-//
-//        int[] leftInorder = Arrays.copyOfRange(inorder, 0, inorderDelimiterIndex);
-//        int[] rightInorder = Arrays.copyOfRange(inorder, inorderDelimiterIndex + 1, inEnd);
-//
-//        // 再切割后序遍历列表
-//        // 舍弃之前取出来过的后序遍历列表的最后一个元素
-//        postorder = Arrays.copyOfRange(postorder, 0, postorder.length - 1);
-//        int[] leftPostorder = Arrays.copyOfRange(postorder, 0, leftInorder.length);
-//        int[] rightPostorder = Arrays.copyOfRange(postorder, leftPostorder.length, postorder.length);
 
         root.left = traversalWithIndex(inorder, inStart, inorderDelimiterIndex, postorder, postStart, postStart + leftInorderLength - 1);
         root.right = traversalWithIndex(inorder, inorderDelimiterIndex + 1, inEnd, postorder, postStart + leftInorderLength, postEnd - 1);
