@@ -41,7 +41,6 @@ public class _02_77_Combinations {
         for (int i = startNumber; i <= n; i++) {
             // 处理节点
             path.add(i);
-            //
             backtracking(n, k, i + 1);
             // 回溯，撤销处理结果
             path.removeLast();

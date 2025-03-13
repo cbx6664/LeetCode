@@ -22,7 +22,7 @@ import org.junit.Test;
 public class _4_977_SquaresOfASortedArray {
     @Test
     public void test1(){
-        System.out.println(sortedSquares(new int[]{-4, -1, 0, 3, 10}));
+        System.out.println(sortedSquares(new int[]{-7,-3,2,3,11}));
     }
     
     public int[] sortedSquares(int[] nums) {
@@ -32,7 +32,8 @@ public class _4_977_SquaresOfASortedArray {
         int k = nums.length - 1;
         int[] result = new int[nums.length];
 
-        //双指针, i指向数组左侧, j指向数组右侧
+        // 双指针, i指向数组左侧, j指向数组右侧
+        // 注意双指针指向同一个元素的情况
         for (int i = 0, j = nums.length - 1; i <= j; ) {
             if (nums[i] * nums[i] > nums[j] * nums[j]) {
                 result[k--] = nums[i] * nums[i];

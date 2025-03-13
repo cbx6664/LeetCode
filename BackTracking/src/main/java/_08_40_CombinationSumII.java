@@ -57,6 +57,7 @@ public class _08_40_CombinationSumII {
 
     @Test
     public void test1() {
-        combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8);
+        combinationSum2(new int[]{1,1,2}, 3);
+        System.out.println(result.toString());
     }
 }

@@ -27,7 +27,7 @@ import java.util.Map;
 public class _5_1_TwoSum {
     @Test
     public void test1() {
-        System.out.println(twoSum(new int[]{3, 2, 4}, 6));
+        System.out.println(twoSum(new int[]{3, 3}, 6));
     }
 
     public int[] twoSum(int[] nums, int target) {
